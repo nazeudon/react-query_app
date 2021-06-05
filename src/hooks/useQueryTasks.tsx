@@ -11,7 +11,7 @@ export const useQueryTasks = () => {
   return useQuery<Task[], Error>({
     queryKey: 'tasks',
     queryFn: getTasks,
-    cacheTime: 30000,
-    staleTime: 30000,
+    cacheTime: 30000, //componentのUnMount後何秒間cacheを保持するか(ms)
+    staleTime: 30000, //最新のcacheを何秒間最新と見なすか(ms)
   })
 }
